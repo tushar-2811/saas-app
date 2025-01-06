@@ -23,7 +23,7 @@ export default function Navbar() {
                     <nav className='flex gap-6 font-medium'>
                    {
                       navLinks.map((navlink) => {
-                        return <Link href={navlink.href}>
+                        return <Link key={navlink.label} href={navlink.href}>
                              {navlink.label}
                         </Link>
                       })
