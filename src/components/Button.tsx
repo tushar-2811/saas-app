@@ -7,14 +7,22 @@ const classes = cva('border rounded-full px-6 h-12 font-medium',{
         variant : {
             primary : "border-white bg-transparent",
             secondary : "bg-lime-400 text-neutral-950 border-lime-400"
+        },
+        size : {
+          sm : "h-10"
         }
     }
 })
 
-const Button = (props : {variant : "primary" | "secondary" ;} & HTMLAttributes<HTMLButtonElement>) => {
-    const {variant , className , ...otherProps} = props;
+const Button = (
+  props : {
+    variant : "primary" | "secondary";
+    size ?: "sm"
+     
+} & HTMLAttributes<HTMLButtonElement>) => {
+    const {variant , size , className , ...otherProps} = props;
   return (
-    <button className={classes({ variant : variant , className : className })}
+    <button className={classes({ variant : variant , className : className , size : size })}
        {...otherProps}
     />
  
