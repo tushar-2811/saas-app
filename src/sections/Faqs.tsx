@@ -1,4 +1,6 @@
+'use client';
 import Tag from "@/components/Tag";
+import { useState } from "react";
 import { twMerge } from "tailwind-merge";
 
 const faqs = [
@@ -25,7 +27,7 @@ const faqs = [
 ];
 
 export default function Faqs() {
-    const selectedIndex = 0;
+    const [selectedIndex , setSelectedIndex] = useState(0);
     return <section className="py-24">
         <div className="container">
             <div className="flex justify-center">
@@ -38,7 +40,7 @@ export default function Faqs() {
 
             <div className="mt-12 flex flex-col gap-6 max-w-xl mx-auto">
                 {faqs.map((faq,faqIndex) => (
-                    <div key={faq.question} className="bg-neutral-900 rounded-2xl border border-white/10 p-6 ">
+                    <div onClick={() => setSelectedIndex(faqIndex)} key={faq.question} className="bg-neutral-900 rounded-2xl border border-white/10 p-6 ">
                        <div className="flex justify-between items-center">
                            <h3 className="font-medium">  {faq.question}</h3>
                            <svg xmlns="http://www.w3.org/2000/svg" 

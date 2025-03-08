@@ -11,9 +11,9 @@ const navLinks = [
 ];
 
 export default function Navbar() {
-    return <section className="py-4 lg:py-8">
+    return <section className="py-4 lg:py-8 sticky top-0 z-50">
         <div className="container max-w-5xl">
-             <div className="grid grid-cols-2 lg:grid-cols-3 border border-white/15 rounded-full p-2 items-center px-4 md:pr-2">
+             <div className="grid grid-cols-2 lg:grid-cols-3 border border-white/15 rounded-full p-2 items-center px-4 md:pr-2 bg-neutral-950/70 backdrop-blur">
                 <div>
                   <Image src={logoImage} alt='layers logo' className='h-9 md:h-auto w-auto ' />
                 </div>
